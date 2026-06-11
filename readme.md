@@ -42,4 +42,4 @@ A futuristic cyberpunk-themed landing page for IIT Bombay Techfest 2026 featurin
 
 ## Author
 
-Created for learning and web development practice.
+made by Ajitesh Seth (student at HBTU, Kanpur)
