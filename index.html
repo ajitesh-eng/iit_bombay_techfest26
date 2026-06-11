@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IIT Bombay Techfest '26 // Cyborg Neural Link</title>
+  <meta name="description" content="Welcome to the neural command portal of IIT Bombay Techfest 2026. Synchronize your cybernetic profiles, scan terminal logs, and unlock advanced event grids.">
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Cybernetic Grid & Noise Overlay -->
+  <div class="noise-overlay"></div>
+  
+  <!-- Neural Link Particle Background -->
+  <canvas id="neural-canvas"></canvas>
+
+  <!-- NAVIGATION HEADER -->
+  <header class="cyber-header">
+    <div class="container header-grid">
+      <div class="logo-container">
+        <a href="#" class="cyber-logo" id="header-logo">
+          TECHFEST <span>'26</span>
+          <span class="badge">Cyborg-v3</span>
+        </a>
+      </div>
+      
+      <nav class="nav-links">
+        <a href="#" class="nav-link" data-target="hero">Sector Alpha</a>
+        <a href="#terminal-sector" class="nav-link" data-target="terminal">Sector Beta</a>
+        <a href="#events-sector" class="nav-link" data-target="events">Sector Gamma</a>
+        <a href="#register-sector" class="nav-link" data-target="sync">Sector Delta</a>
+      </nav>
+      
+      <div class="header-controls">
+        <div class="status-indicator">
+          <span class="status-dot"></span>
+          <span id="status-text">NEURAL LINK: SYNCED</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero-sector">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">System Directive Initiated</div>
+          <h1 class="glitch-title" data-text="IIT BOMBAY TECHFEST">IIT BOMBAY<br>TECHFEST</h1>
+          <p class="hero-description">
+            Establish real-time neural synchronization with Asia's largest Science and Technology Festival. 
+            Calibrate your cognitive modules, upgrade cybernetic implants, and interface with elite technology collectives.
+          </p>
+          
+          <!-- Countdown Clock -->
+          <div class="countdown-container">
+            <span class="countdown-label">Link Calibration Countdown</span>
+            <div class="countdown-grid">
+              <div class="countdown-item">
+                <span class="countdown-value" id="days">00</span>
+                <span class="countdown-unit">Days</span>
+              </div>
+              <div class="countdown-item">
+                <span class="countdown-value" id="hours">00</span>
+                <span class="countdown-unit">Hours</span>
+              </div>
+              <div class="countdown-item">
+                <span class="countdown-value" id="minutes">00</span>
+                <span class="countdown-unit">Mins</span>
+              </div>
+              <div class="countdown-item">
+                <span class="countdown-value" id="seconds">00</span>
+                <span class="countdown-unit">Secs</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="hero-actions">
+            <a href="#register-sector" class="cyber-btn cyber-btn-primary" id="sync-btn">Sync Profile</a>
+            <a href="#terminal-sector" class="cyber-btn cyber-btn-secondary" id="diagnostics-btn">Run Scans</a>
+          </div>
+        </div>
+        
+        <!-- Rotating Holographic HUD Display -->
+        <div class="hologram-wrapper">
+          <div class="holo-mesh"></div>
+          <div class="holo-mesh-inner"></div>
+          <div class="holo-core">
+            <!-- Dynamic Vector Cyborg Head/Implant SVG -->
+            <svg class="holo-svg" viewBox="0 0 100 100">
+              <!-- Outer circuit circle rings -->
+              <circle cx="50" cy="50" r="45" stroke-dasharray="10 5" />
+              <circle cx="50" cy="50" r="35" stroke-dasharray="2 6" />
+              <!-- Cyber head profile schematic -->
+              <path d="M 50 15 
+                       C 32 15, 25 25, 25 45 
+                       C 25 60, 32 75, 45 82 
+                       L 45 87 
+                       L 55 87 
+                       L 55 82 
+                       C 68 75, 75 60, 75 45 
+                       C 75 25, 68 15, 50 15 Z" />
+              <!-- Neural link connector grid nodes -->
+              <line x1="25" y1="45" x2="38" y2="45" />
+              <line x1="75" y1="45" x2="62" y2="45" />
+              <line x1="50" y1="15" x2="50" y2="28" />
+              <circle cx="38" cy="45" r="2.5" fill="currentColor" />
+              <circle cx="62" cy="45" r="2.5" fill="currentColor" />
+              <circle cx="50" cy="28" r="2.5" fill="currentColor" />
+              <!-- Cybernetic split line representing bionic side -->
+              <path d="M 50 15 L 50 82" stroke-dasharray="4 2" />
+              <path d="M 50 35 L 68 35 M 50 55 L 72 51 M 50 68 L 65 68" />
+              <rect x="58" y="32" width="6" height="6" fill="currentColor" />
+              <circle cx="72" cy="51" r="2" fill="currentColor" />
+            </svg>
+          </div>
+          <div class="holo-projector"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEURAL COMMAND CONSOLE (TERMINAL) -->
+    <section class="terminal-section" id="terminal-sector">
+      <div class="container">
+        <div class="cyber-panel">
+          <div class="panel-header">
+            <div class="panel-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
+              Neural Terminal Command Shell [v3.45]
+            </div>
+            <div class="panel-window-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+          </div>
+          <div class="terminal-body" id="console-body">
+            <div class="terminal-line system">Initializing neural interface boot sequence...</div>
+            <div class="terminal-line success">Core processors: ACTIVE [OK]</div>
+            <div class="terminal-line success">Implant linkups: SYNCHRONIZED [OK]</div>
+            <div class="terminal-line warning">Warning: Host database contains minor structural anomalies.</div>
+            <div class="terminal-line system">Type 'help' to scan available operations protocol.</div>
+            
+            <div class="terminal-prompt-line">
+              <span class="prompt-prefix">guest@tf26:~$</span>
+              <input type="text" class="terminal-input" id="console-input" autocomplete="off" autofocus placeholder="Type command here..." aria-label="Terminal Input">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENT SECTOR GRID -->
+    <section class="events-section" id="events-sector">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Cybernetic Event Modules</span>
+          <h2 class="section-title">Synergy <span>Sectors</span></h2>
+        </div>
+        
+        <div class="events-grid">
+          <!-- CARD 1: ROBOWARS -->
+          <div class="event-card" id="card-robowars">
+            <div class="event-card-tag">SEC // 01</div>
+            <div class="event-icon-container">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+                <path d="M12 2v9M8 5h8M5 21v2M19 21v2"></path>
+              </svg>
+            </div>
+            <h3 class="event-card-title">Robowars</h3>
+            <p class="event-card-desc">
+              The ultimate heavy metal colosseum. Custom engineered robotic titans clashing for absolute binary supremacy in a hazard-filled cage.
+            </p>
+            <div class="event-specs">
+              <div class="spec-row">
+                <span class="spec-label">Hull Armour</span>
+                <span class="spec-value">95% Nanosteel</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Weapon Tier</span>
+                <span class="spec-value">Kinetic & Spin</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Combat Sync</span>
+                <span class="spec-value">Direct Neural Link</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2: CODING BRAWL -->
+          <div class="event-card" id="card-coding">
+            <div class="event-card-tag">SEC // 02</div>
+            <div class="event-icon-container">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 class="event-card-title">Coding Brawl</h3>
+            <p class="event-card-desc">
+              Algorithmic decathlon where cognitive speed is overclocked. Solve complex architectural puzzles under cyber-assault protocols.
+            </p>
+            <div class="event-specs">
+              <div class="spec-row">
+                <span class="spec-label">Cognitive Sync</span>
+                <span class="spec-value">Direct Bios-Bus</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Execution Latency</span>
+                <span class="spec-value">&lt; 10ms</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Host Environment</span>
+                <span class="spec-value">Techfest Sandbox</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3: AEROSPECTRA -->
+          <div class="event-card" id="card-aerospectra">
+            <div class="event-card-tag">SEC // 03</div>
+            <div class="event-icon-container">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <h3 class="event-card-title">Aerospectra</h3>
+            <p class="event-card-desc">
+              High-speed autonomous avian drone racing. UAV modules navigate dynamic obstacles using embedded telemetry chips and machine vision.
+            </p>
+            <div class="event-specs">
+              <div class="spec-row">
+                <span class="spec-label">Lift Vectors</span>
+                <span class="spec-value">Hexa-Propeller</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Propulsion Core</span>
+                <span class="spec-value">Micro-Ion Brushless</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Navigation System</span>
+                <span class="spec-value">LIDAR Mesh Sync</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEURAL INTEGRATION PROFILE (REGISTRATION & PASS GENERATION) -->
+    <section class="register-section" id="register-sector">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Calibration Form</span>
+          <h2 class="section-title">Sync <span>Protocol</span></h2>
+        </div>
+        
+        <div class="register-grid">
+          <!-- Registration Configuration Console -->
+          <div class="cyber-panel register-form-panel">
+            <h3 style="margin-bottom: 25px; color: #fff; font-size: 1.2rem; border-bottom: 1px solid var(--primary-dim); padding-bottom: 10px;">Calibration Inputs</h3>
+            <form id="registration-form" novalidate>
+              <div class="form-group">
+                <label for="input-alias" class="form-label">Cyborg Alias / Name</label>
+                <div class="input-wrapper">
+                  <input type="text" id="input-alias" class="cyber-input" placeholder="e.g. Neo-Cortex-45" required>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="select-implant" class="form-label">Primary Implant Calibration</label>
+                <div class="select-wrapper">
+                  <select id="select-implant" class="cyber-select" required>
+                    <option value="" disabled selected hidden>Choose upgrade chip...</option>
+                    <option value="Neural Lobe Link v4.2">Neural Lobe Link v4.2 (Cognitive Booster)</option>
+                    <option value="Optic Cyber-Lens x9">Optic Cyber-Lens x9 (Thermal & Analysis)</option>
+                    <option value="Bionic Core Accelerator">Bionic Core Accelerator (Speed & Power)</option>
+                    <option value="Nano-Tech Blood Filter">Nano-Tech Blood Filter (Toxin Immunity)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="select-collective" class="form-label">Sector Collective Affinity</label>
+                <div class="select-wrapper">
+                  <select id="select-collective" class="cyber-select" required>
+                    <option value="" disabled selected hidden>Select sector base...</option>
+                    <option value="Autonomous Robotics Division">Autonomous Robotics Division</option>
+                    <option value="Quantum Computing Syndicate">Quantum Computing Syndicate</option>
+                    <option value="Bio-Synthetic Engineering Lab">Bio-Synthetic Engineering Lab</option>
+                    <option value="Deep Artificial Intelligence Unit">Deep Artificial Intelligence Unit</option>
+                  </select>
+                </div>
+              </div>
+              
+              <button type="submit" class="cyber-btn cyber-btn-primary" style="width: 100%; border-radius: var(--border-radius-sm);">
+                Sync Implant Profile
+              </button>
+            </form>
+          </div>
+          
+          <!-- Virtual Cyborg Pass Panel -->
+          <div class="profile-preview-panel">
+            <h3 style="color: #fff; font-size: 1.2rem; border-bottom: 1px solid var(--primary-dim); padding-bottom: 10px; margin-bottom: 5px;">Holographic Cyborg Pass</h3>
+            
+            <!-- Default Placeholder State -->
+            <div class="pass-placeholder" id="pass-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <div class="placeholder-text">Awaiting Synchronization</div>
+              <span style="font-size: 0.8rem; color: var(--text-muted); text-align: center; max-width: 280px;">
+                Complete the calibration inputs on the left to synthesize your custom digital ID card pass.
+              </span>
+            </div>
+
+            <!-- Dynamically Generated Cyborg Pass -->
+            <div class="pass-container" id="pass-result">
+              <div class="cyborg-pass" id="pass-card">
+                <div class="pass-header">
+                  <div class="pass-header-info">
+                    <h4>IIT BOMBAY // TECHFEST '26</h4>
+                    <h3>NEURAL SYNC PASS</h3>
+                  </div>
+                  <div class="pass-serial" id="card-serial">TF-9842-AX</div>
+                </div>
+                
+                <div class="pass-body">
+                  <div class="pass-avatar-box">
+                    <div class="avatar-scanner-line"></div>
+                    <!-- Wireframe Avatar SVG -->
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"></path>
+                    </svg>
+                  </div>
+                  
+                  <div class="pass-details">
+                    <div class="pass-field">
+                      <span class="pass-label">Subject Alias</span>
+                      <span class="pass-value" id="card-alias">GUEST_USER</span>
+                    </div>
+                    <div class="pass-field">
+                      <span class="pass-label">Implant Calibrated</span>
+                      <span class="pass-value accent" id="card-implant">None Detected</span>
+                    </div>
+                    <div class="pass-field">
+                      <span class="pass-label">Affinity Core</span>
+                      <span class="pass-value" id="card-affinity">Sector Sandbox</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="pass-footer">
+                  <div class="pass-barcode">
+                    <div class="barcode-stripes"></div>
+                    <span class="barcode-text" id="card-barcode-text">9834720914872</span>
+                  </div>
+                  <div class="pass-stamp">SECURED LINK</div>
+                </div>
+              </div>
+              
+              <button class="cyber-btn cyber-btn-secondary" id="download-pass-btn" style="margin-top: 15px; width: 100%; border-radius: var(--border-radius-sm);">
+                Synthesize Profile Data
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CYBERNETIC FOOTER -->
+  <footer class="cyber-footer">
+    <div class="container footer-grid">
+      <div class="footer-logo">
+        IIT BOMBAY <span>TECHFEST '26</span>
+      </div>
+      <div class="footer-text">
+        SYSTEM ACCESS PORTAL // RUNNING AT CALIBRATION PROTOCOL V3.2
+      </div>
+      <div class="footer-socials">
+        <a href="https://github.com" target="_blank" rel="noopener" class="social-icon" title="Github Link" aria-label="Github Profile">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+          </svg>
+        </a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" class="social-icon" title="Twitter Link" aria-label="Twitter Grid">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+          </svg>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener" class="social-icon" title="LinkedIn Link" aria-label="LinkedIn Portal">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path>
+            <circle cx="4" cy="4" r="2"></circle>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Web Logic Script -->
+  <script src="script.js"></script>
+</body>
+</html>
